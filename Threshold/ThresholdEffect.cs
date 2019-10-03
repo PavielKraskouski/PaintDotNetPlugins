@@ -44,8 +44,8 @@ namespace Threshold
                 for (int x = rect.Left; x < rect.Right; x++)
                 {
                     ColorBgra pixel = src[x, y];
-                    double brightness = pixel.GetIntensityByte();
-                    if (brightness < Threshold) dst[x, y] = ColorBgra.FromBgra(0, 0, 0, pixel.A);
+                    byte intensity = pixel.GetIntensityByte();
+                    if (intensity < Threshold) dst[x, y] = ColorBgra.FromBgra(0, 0, 0, pixel.A);
                     else dst[x, y] = ColorBgra.FromBgra(255, 255, 255, pixel.A);
                 }
             }

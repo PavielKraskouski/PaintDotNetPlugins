@@ -63,8 +63,8 @@ namespace TrippyRainbow
                 for (int x = rect.Left; x < rect.Right; x++)
                 {
                     ColorBgra pixel = src[x, y];
-                    double brightness = pixel.GetIntensity();
-                    double warmness = brightness * (RainbowColors.Length - 1) + Offset * RainbowColors.Length;
+                    double intensity = pixel.GetIntensity();
+                    double warmness = intensity * (RainbowColors.Length - 1) + Offset * RainbowColors.Length;
                     int integer = (int)warmness;
                     double fraction = warmness - integer;
                     ColorBgra color1 = RainbowColors[integer % RainbowColors.Length];
